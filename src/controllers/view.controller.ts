@@ -24,7 +24,7 @@ const viewController = {
   register(req: Request, res: Response) {
     const messages = req.flash("success") || req.flash("error");
 
-    console.log(messages);
+    console.log("register", messages);
 
     res.render("auth/register", {
       layout: "layouts/main-layout",
@@ -35,7 +35,7 @@ const viewController = {
   login(req: Request, res: Response) {
     const messages = req.flash("success") || req.flash("error");
 
-    console.log(messages);
+    console.log("login", messages);
 
     res.render("auth/login", {
       layout: "layouts/main-layout",

@@ -1,4 +1,3 @@
-
 # TEST PT SASANA SOLUSI DIGITAL
 
 ## Skill Test - Backend Developer
@@ -23,10 +22,11 @@ Install this app with npm
     
 ## Migrations
 
-To deploy this project run
+To migrations this project run
 
 ```bash
   npx prisma migrate dev --name init
+  npx prisma migrate reset
   npx prisma studio
 ```
 
@@ -42,7 +42,7 @@ To deploy this project run
 
 ## Tech Stack
 
-**Library:** Express,Ts-node,JWT,Zod,express-session,helmet,body-parser,morgan,prisma, speakeasy
+**Library:** Express,Ts-node,JWT,Zod,express-session,helmet,body-parser,morgan,prisma,speakeasy
 
 **Server:** Node
 

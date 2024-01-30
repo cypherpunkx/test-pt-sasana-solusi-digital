@@ -5,7 +5,6 @@ import {
   templateSendOTP,
   templateForgotPassword,
 } from "./common/template_email";
-import { generateTokenJWT } from "./security/jwt_security";
 
 async function sendVerificationEmail(token: string, email: string) {
   const verificationLink: string = `http://${process.env.HOST}:${process.env.PORT}/auth/verify-email?token=${token}`;

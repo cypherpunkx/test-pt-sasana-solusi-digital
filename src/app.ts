@@ -34,9 +34,10 @@ app.use(
   session({
     secret: "keyboard cat",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
   })
 );
+
 app.use(flash());
 
 transport.verify((error, success) => {

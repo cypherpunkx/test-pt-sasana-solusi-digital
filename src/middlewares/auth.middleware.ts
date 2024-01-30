@@ -26,4 +26,17 @@ async function verifyUser(req: Request, res: Response, next: NextFunction) {
   next();
 }
 
-export { verifyUser };
+async function authenticate(req: Request, res: Response, next: NextFunction) {
+  try {
+    if (req.session.user) {
+      return next();
+    }
+    res.redirect("/login");
+  } catch (error) {
+    console.log("error");
+    req.flash("error", "Login failed, Please register your account");
+    res.redirect("/login");
+  }
+}
+
+export { verifyUser, authenticate };
