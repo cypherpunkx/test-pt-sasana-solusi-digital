@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String  @id @db.Uuid
+  fullname String  @db.VarChar(255)
+  email    String  @unique @db.VarChar(255)
+  password String  @db.VarChar(255)
+  verified Boolean @default(false) @db.Boolean
+
+  EmailVerification EmailVerification?
+  OTPTokens         OTPTokens?
+}
+
+model EmailVerification {
+  id     String @id @db.Uuid
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @unique @db.Uuid
+  token  String @unique @db.VarChar(455)
+}
+
+model OTPTokens {
+  id     String  @id @db.Uuid
+  user   User    @relation(fields: [userId], references: [id])
+  userId String  @unique @db.Uuid
+  secret String  @unique @db.VarChar(255)
+  isUsed Boolean @default(false) @db.Boolean
+}

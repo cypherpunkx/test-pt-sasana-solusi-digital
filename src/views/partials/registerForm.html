@@ -1,0 +1,42 @@
+<form method="post" action="/auth/send-verification-email">
+  <div class="mb-3">
+    <label for="fullname" class="form-label text-primary-emphasis"
+      >Full Name</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="fullname"
+      name="fullname"
+      aria-describedby="emailHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label text-primary-emphasis"
+      >Email address</label
+    >
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      aria-describedby="emailHelp"
+      required
+    />
+
+    <div id="emailHelp" class="form-text">
+      We'll never share your email with anyone else.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label text-primary-emphasis"
+      >Password</label
+    >
+    <input type="password" class="form-control" id="password" name="password" />
+  </div>
+  <div class="d-flex justify-content-between align-items-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <span>OR</span>
+    <a href="/login" class="btn btn-outline-success">Login</a>
+  </div>
+</form>
